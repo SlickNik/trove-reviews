@@ -18,7 +18,7 @@ import yaml
 import urllib
 
 url_prefix = 'https://review.openstack.org/#/dashboard/?'
-html_template = '<meta http-equiv="refresh" content="0; URL=%s"'
+html_template = '<meta http-equiv="refresh" content="0; URL=%s">'
 
 
 def generate_review_dash():
