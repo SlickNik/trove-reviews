@@ -1,0 +1,11 @@
+- Dashboard:
+    title: 'Trove Reviews in Other Projects'
+    External Reviews: |
+      NOT (project:openstack/trove OR project:openstack/python-troveclient OR project:openstack/trove-integration)
+      AND status:open
+      NOT label:Code-Review>=0,self
+      NOT label:Code-Review<=-1
+      NOT label:Workflow<=-1
+      AND (message:*trove* OR topic:*trove* OR comment:*trove*)
+      AND NOT message:*classifier*
+      AND limit:50

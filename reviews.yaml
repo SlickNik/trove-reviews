@@ -26,9 +26,3 @@
       label:Verified>=1,jenkins
       label:Verified>=1,reddwarf
       age:2d
-    Topic Needing Attention (Trove Metadata): |
-      (project:openstack/trove OR project:openstack/python-troveclient OR project:openstack/trove-integration)
-      AND status:open
-      NOT label:Code-Review>=0,self
-      NOT label:Workflow<=-1
-      topic:bp/trove-metadata

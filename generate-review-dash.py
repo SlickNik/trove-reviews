@@ -14,19 +14,28 @@
 # under the License.
 
 
-import yaml
+import os
 import urllib
+import yaml
 
 url_prefix = 'https://review.openstack.org/#/dashboard/?'
 html_template = '<meta http-equiv="refresh" content="0; URL=%s">'
 
 
-def generate_review_dash():
-    stream = open('trove-dash.yaml', 'r')
+def generate_review_dash(filename):
+    stream = open(filename, 'r')
     conf = yaml.load(stream)[0]['Dashboard']
     url = url_prefix + urllib.urlencode(conf).replace('%2C', '%252C')
-    with open("reviews.htm", "w") as html_file:
+    dashname = os.path.splitext(filename)[0] + ".htm"
+    with open(dashname, "w") as html_file:
         html_file.write(html_template % url)
 
+
+def generate_review_dashes():
+    for filename in os.listdir("./"):
+        if filename.endswith(".yaml"):
+            generate_review_dash(filename)
+
+
 if __name__ == '__main__':
-    generate_review_dash()
+    generate_review_dashes()
