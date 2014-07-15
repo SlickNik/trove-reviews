@@ -16,6 +16,7 @@
 
 import os
 import urllib
+
 import yaml
 
 url_prefix = 'https://review.openstack.org/#/dashboard/?'
@@ -29,17 +30,39 @@ html_template = (
 
 def generate_review_dash(filename):
     stream = open(filename, 'r')
-    conf = yaml.load(stream)[0]['Dashboard']
+
+    yaml_data = yaml.load(stream)
+    conf = yaml_data[0]['Dashboard']
+    desc = yaml_data[1]['Description']
     url = url_prefix + urllib.urlencode(conf).replace('%2C', '%252C')
-    dashname = os.path.splitext(filename)[0] + ".htm"
+
+    title = os.path.splitext(filename)[0]
+    dashname = title + ".htm"
+
     with open(dashname, "w") as html_file:
         html_file.write(html_template % url)
 
+    return title, desc
+
+
+def list_to_html_table(list):
+    yield '<table style="width:300px">'
+    for sublist in list:
+        yield '  <tr> <td>'
+        yield '    </td><td>'.join(sublist)
+        yield '  </td></tr>'
+    yield '</table>'
+
 
 def generate_review_dashes():
+    table = []
     for filename in os.listdir("./"):
         if filename.endswith(".yaml"):
-            generate_review_dash(filename)
+            title, desc = generate_review_dash(filename)
+            href = '<a href="%s.htm">%s</a>' % (title, title)
+            table.append([href, desc])
+    with open("index.htm", "w") as index_file:
+        index_file.write('\n'.join(list_to_html_table(table)))
 
 
 if __name__ == '__main__':

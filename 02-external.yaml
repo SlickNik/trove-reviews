@@ -9,3 +9,4 @@
       AND (message:*trove* OR topic:*trove* OR comment:*trove*)
       AND NOT message:*classifier*
       AND limit:50
+- Description: 'External Trove Reviews'

@@ -30,3 +30,4 @@
       NOT label:Code-Review>=0,self
       NOT label:Workflow<=-1
       topic:bp/vertica-db-support
+- Description: 'Trove Reviews by Topic'
