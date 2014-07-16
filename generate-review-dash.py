@@ -46,7 +46,7 @@ def generate_review_dash(filename):
 
 
 def list_to_html_table(list):
-    yield '<table style="width:300px">'
+    yield '<table style="width:600px">'
     for sublist in list:
         yield '  <tr> <td>'
         yield '    </td><td>'.join(sublist)

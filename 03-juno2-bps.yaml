@@ -1,0 +1,43 @@
+- Dashboard:
+    title: 'Trove Juno-2 Proposed Open Reviews by Blueprint Topic'
+    Neutron Support - https://blueprints.launchpad.net/trove/+spec/neutron-support: |
+      status:open
+      NOT label:Code-Review>=0,self
+      NOT label:Workflow<=-1
+      topic:bp/neutron-support
+    Replication v1 - https://blueprints.launchpad.net/trove/+spec/replication-v1: |
+      status:open
+      NOT label:Code-Review>=0,self
+      NOT label:Workflow<=-1
+      topic:bp/replication-v1
+    Refactoring datastore options in cfg.py - https://blueprints.launchpad.net/trove/+spec/refactoring-datastore-options-in-cfg: |
+      status:open
+      NOT label:Code-Review>=0,self
+      NOT label:Workflow<=-1
+      topic:bp/refactoring-datastore-options-in-cfg
+    Configuration Parameters in DB - https://blueprints.launchpad.net/trove/+spec/configuration-parameters-in-db: |
+      status:open
+      NOT label:Code-Review>=0,self
+      NOT label:Workflow<=-1
+      topic:bp/configuration-parameters-in-db
+    Ability to update instance name - https://blueprints.launchpad.net/trove/+spec/update-instance-name: |
+      status:open
+      NOT label:Code-Review>=0,self
+      NOT label:Workflow<=-1
+      topic:bp/update-instance-name
+    Cross-region backup availability - https://blueprints.launchpad.net/trove/+spec/cross-region-backup-availability: |
+      status:open
+      NOT label:Code-Review>=0,self
+      NOT label:Workflow<=-1
+      topic:bp/cross-region-backup-availability
+    Cassandra backup/restore - https://blueprints.launchpad.net/trove/+spec/cassandra-backup-restore: |
+      status:open
+      NOT label:Code-Review>=0,self
+      NOT label:Workflow<=-1
+      topic:bp/cassandra-backup-restore
+    Couchbase backup/restore - https://blueprints.launchpad.net/trove/+spec/backups-single-instance-couchbase: |
+      status:open
+      NOT label:Code-Review>=0,self
+      NOT label:Workflow<=-1
+      topic:bp/backups-single-instance-couchbase
+- Description: 'Trove Juno-2 Proposed Open Reviews by Blueprint'
